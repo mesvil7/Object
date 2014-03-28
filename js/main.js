@@ -79,7 +79,7 @@ function callJson(){
 	    }
 	}
 
-	var newsEmployee = 'http://localhost:8080/practicas/Javascript/salarios/json/empleados.json';
+	var newsEmployee = 'http://localhost:8080/practicas/Javascript/salarios/json/employees.json';
 	xmlhttp.open("GET", newsEmployee, true);
 	xmlhttp.send();
 }
