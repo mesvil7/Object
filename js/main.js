@@ -59,13 +59,13 @@ function callJson(){
 
 		            		
 		            		if(newEmployee instanceof Employee){
-								sumEmployees = sumEmployees + newEmployee.GetSalary();
-								html += '<p class="empl"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
+					    sumEmployees = sumEmployees + newEmployee.GetSalary();
+					    html += '<p class="empl"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
 
-							}else if(newEmployee instanceof Admin){
-								sumAdmin = sumAdmin + newEmployee.GetSalary();
-								html += '<p class="empl admin"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
-							}
+					}else if(newEmployee instanceof Admin){
+					    sumAdmin = sumAdmin + newEmployee.GetSalary();
+					    html += '<p class="empl admin"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
+					}
 		            	}
 		            }
 		        }
