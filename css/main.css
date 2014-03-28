@@ -1,0 +1,8 @@
+*{margin: 0; padding: 0; }
+h1{font-size: 20px; margin: 0 0 5px; }
+#mainContent{overflow: hidden; width: 500px; margin: 0 auto;}
+.box{float: left; width: 46%; padding: 2%; background: #F7F7F7;  padding-bottom: 2000px; margin-bottom: -2000px;}
+.box:nth-child(2n+2){text-align: right; }
+.box p{margin: 0 0 10px;}
+.box .total{font-size: 24px;}
+.box .emBox{height: 200px;max-height: 200px; overflow: auto;}

@@ -1,0 +1,18 @@
+[
+
+	{
+		"Employee":[
+			{"name":"Maikel","salary":3000},
+			{"name":"Edwin","salary":2000},
+			{"name":"Jorge","salary":1500}
+		], 
+
+		"Admin":[
+			{"name":"Manuel","salary":5000},
+			{"name":"Luis","salary":7000}
+		]
+
+	}
+    
+
+]
