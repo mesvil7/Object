@@ -1,6 +1,6 @@
 // Create Main Class
 function Person(name, salary){
-	this.name = name || 'Anonimno';
+	this.name   = name || 'Anonimno';
 	this.salary = salary || 0;
 }
 Person.prototype.GetSalary = function(){
@@ -11,22 +11,22 @@ Person.prototype.GetSalary = function(){
 function Employee(obj){
 	Person.call(this, obj.name, obj.salary);
 }
-Employee.prototype = Object.create(Person.prototype);
+Employee.prototype            = Object.create(Person.prototype);
 Employee.prototype.contructor = Employee;
 
 
 function Admin(obj){
 	Person.call(this, obj.name, obj.salary);
 }
-Admin.prototype = Object.create(Person.prototype);
+Admin.prototype            = Object.create(Person.prototype);
 Admin.prototype.contructor = Admin;
 
 
 // variables to use within ajax call
-var html 		 ='',
+var html             ='',
 	mainC 	     = document.getElementById("mainContent"),
 	sumEmployees = 0, // to count employees
-	sumAdmin 	 = 0;     // to count Amin
+	sumAdmin     = 0; // to count Amin
 
 // AJAX Callhin ajax call
 function callJson(){
@@ -72,7 +72,6 @@ function callJson(){
 		        html += '</div>';
 		        var total = (name == 'Employee' ? sumEmployees : sumAdmin);
 		        html += '<p class="total">Total Salaries: $'+ total + '</p>';
-
 		        html += '</div>'
 	    	}
 		    mainC.innerHTML = html;
