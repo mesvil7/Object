@@ -28,7 +28,7 @@ var html             ='',
 	sumEmployees = 0, // to count employees
 	sumAdmin     = 0; // to count Amin
 
-// AJAX Callhin ajax call
+// AJAX call
 function callJson(){
 
 	var xmlhttp = new XMLHttpRequest();
