@@ -45,30 +45,32 @@ function callJson(){
 
 		        newobj = eval('{' + name + '}');//turn the string into a object
 
-	            for(var data in obj[0][name]){
+			for(var data in obj[0][name]){
 
-            		// create instances of Employee or Admin
-            		var newEmployee = new newobj({
-            			name:obj[0][name][data]["name"],
-            			salary:obj[0][name][data]["salary"]
-            		}); 
+            			// create instances of Employee or Admin
+            			var newEmployee = new newobj({
+            				name:obj[0][name][data]["name"],
+            				salary:obj[0][name][data]["salary"]
+            			}); 
 
-            		if(newEmployee instanceof Employee){
+            			if(newEmployee instanceof Employee){
 			    		sumEmployees = sumEmployees + newEmployee.GetSalary();
 			    		html += '<p class="empl"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
-					}else if(newEmployee instanceof Admin){
+				}else if(newEmployee instanceof Admin){
 			    		sumAdmin = sumAdmin + newEmployee.GetSalary();
 			    		html += '<p class="empl admin"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
-					}
+				}
 	            	
-	            }
+			}
 		        
 		        html += '</div>';
 		        var total = (name == 'Employee' ? sumEmployees : sumAdmin);
 		        html += '<p class="total">Total Salaries: $'+ total + '</p>';
 		        html += '</div>'
 	    	}
-		    mainC.innerHTML = html;
+		
+		mainC.innerHTML = html;
+		
 	    }
 	}
 
