@@ -26,7 +26,7 @@ Admin.prototype.contructor = Admin;
 var html             ='',
 	mainC 	     = document.getElementById("mainContent"),
 	sumEmployees = 0, // to count employees
-	sumAdmin     = 0; // to count Amin
+	sumAdmin     = 0; // to count Admin
 
 // AJAX call
 function callJson(){
@@ -43,32 +43,26 @@ function callJson(){
 	        	html += '<h1>'+name+'</h1>';
 	        	html += '<div class="emBox">';
 
-		        if (obj[0].hasOwnProperty(name)) {
-		        	
-		            newobj = eval('{' + name + '}');//turn the string into a object
+		        newobj = eval('{' + name + '}');//turn the string into a object
 
+	            for(var data in obj[0][name]){
 
-		            for(var data in obj[0][name]){
-		            	if(obj[0][name].hasOwnProperty(data)){
+            		// create instances of Employee or Admin
+            		var newEmployee = new newobj({
+            			name:obj[0][name][data]["name"],
+            			salary:obj[0][name][data]["salary"]
+            		}); 
 
-		            		// create instances of Employee or Admin
-		            		var newEmployee = new newobj({
-		            			name:obj[0][name][data]["name"],
-		            			salary:obj[0][name][data]["salary"]
-		            		}); 
-
-		            		
-		            		if(newEmployee instanceof Employee){
-					    sumEmployees = sumEmployees + newEmployee.GetSalary();
-					    html += '<p class="empl"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
-
+            		if(newEmployee instanceof Employee){
+			    		sumEmployees = sumEmployees + newEmployee.GetSalary();
+			    		html += '<p class="empl"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
 					}else if(newEmployee instanceof Admin){
-					    sumAdmin = sumAdmin + newEmployee.GetSalary();
-					    html += '<p class="empl admin"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
+			    		sumAdmin = sumAdmin + newEmployee.GetSalary();
+			    		html += '<p class="empl admin"><strong>Name: </strong>'+ newEmployee.name + '<strong> Salary: </strong>$' + newEmployee.GetSalary() + '</p>';
 					}
-		            	}
-		            }
-		        }
+	            	
+	            }
+		        
 		        html += '</div>';
 		        var total = (name == 'Employee' ? sumEmployees : sumAdmin);
 		        html += '<p class="total">Total Salaries: $'+ total + '</p>';
