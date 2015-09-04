@@ -23,10 +23,10 @@ Admin.prototype.contructor = Admin;
 
 
 // variables to use within ajax call
-var html             ='',
-	mainC 	     = document.getElementById("mainContent"),
-	sumEmployees = 0, // to count employees
-	sumAdmin     = 0; // to count Admin
+var html         ='',
+    mainC 	 = document.getElementById("mainContent"),
+    sumEmployees = 0, // to count employees
+    sumAdmin     = 0; // to count Admin
 
 // AJAX call
 function callJson(){
